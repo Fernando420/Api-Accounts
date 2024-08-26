@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/ms-accounts
+
+hooks:
+  BeforeInstall:
+    - location: AWScripts/Stop.sh
+      timeout: 300
+
+  ApplicationStart:
+    - location: AWScripts/Start.sh
+      timeout: 300
